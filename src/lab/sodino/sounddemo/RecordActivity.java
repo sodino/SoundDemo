@@ -10,7 +10,7 @@ import android.widget.Button;
 public class RecordActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_record);
 		
 		final Button btnPressed2Talk = (Button) findViewById(R.id.btnPress2Talk);
 		btnPressed2Talk.setOnTouchListener(new OnTouchListener() {

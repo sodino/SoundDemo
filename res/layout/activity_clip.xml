@@ -13,17 +13,21 @@
         android:layout_height="wrap_content"
         android:id="@+id/txtDemo"
         android:text="@string/hello_world" />
-	<Button android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:id="@+id/btnPress2Talk"
-	    android:text="@string/pressed2talk"
-	    android:layout_below="@id/txtDemo"/>
+    
+    
+    <SeekBar android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekbarTop"
+        style="?android:attr/progressBarStyleHorizontal" 
+        android:layout_below="@id/txtDemo"
+        android:layout_centerHorizontal="true"/>
 	<ImageView android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:id="@+id/imgMicroPhone"
+	    android:layout_height="250dp"
+	    android:scaleType="fitCenter"
+	    android:id="@+id/imgClip"
+	    android:src="@drawable/clip_demo"
+	    android:background="#ffffff00"
+	    android:layout_below="@id/txtDemo"
 	    android:layout_centerHorizontal="true"
-	    android:layout_below="@id/btnPress2Talk"
-	    android:background="@drawable/microphone_bg"
-	    android:src="@drawable/microphone_fg_clip"
-	></ImageView>
+    ></ImageView>
 </RelativeLayout>
