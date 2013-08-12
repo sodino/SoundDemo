@@ -23,7 +23,6 @@ public class ClipDrawableActivity extends Activity implements OnSeekBarChangeLis
 		setContentView(R.layout.activity_clip);
 		
 		initViews();
-		
 	}
 	
 	private void initViews(){
