@@ -1,6 +1,8 @@
 package lab.sodino.sounddemo;
 
+import lab.sodino.sounddemo.sound.SoundRecorder;
 import android.app.Activity;
+import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -8,6 +10,8 @@ import android.view.View.OnTouchListener;
 import android.widget.Button;
 
 public class RecordActivity extends Activity {
+	private SoundRecorder soundRecorder;
+	
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_record);
@@ -20,10 +24,13 @@ public class RecordActivity extends Activity {
 					int action = event.getAction();
 					if(action == MotionEvent.ACTION_DOWN){
 						btnPressed2Talk.setText(R.string.released2finish);
+						
+						soundRecorder = new SoundRecorder("/sdcard/test.amr");
+						soundRecorder.startRecord();
 					}else if(action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_CANCEL){
 						btnPressed2Talk.setText(R.string.pressed2talk);
+						soundRecorder.stopRecord();
 					}
-					// 为了 按钮 变色，弄返回false吧..
 					return false;
 				}
 				return false;
