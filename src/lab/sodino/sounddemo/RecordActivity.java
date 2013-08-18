@@ -2,12 +2,11 @@ package lab.sodino.sounddemo;
 
 import java.io.File;
 
-import lab.sodino.sounddemo.sound.AudioUtil;
 import lab.sodino.sounddemo.sound.SoundRecorder;
 import lab.sodino.sounddemo.sound.SoundRecorder.SoundRecordListener;
+import lab.sodino.sounddemo.util.AudioUtil;
 import android.app.Activity;
 import android.graphics.drawable.ClipDrawable;
-import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -110,5 +109,20 @@ public class RecordActivity extends Activity implements SoundRecordListener, Cal
 			break;
 		}
 		return false;
+	}
+
+
+	public void onStop(){
+		super.onStop();
+		if(soundRecorder != null){
+			soundRecorder.stopRecord();
+			soundRecorder = null;
+		}
+	}
+	public void onDestory(){
+		super.onDestroy();
+		if(soundRecorder != null){
+			soundRecorder.stopRecord();
+		}
 	}
 }

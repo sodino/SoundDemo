@@ -1,4 +1,4 @@
-package lab.sodino.sounddemo.sound;
+package lab.sodino.sounddemo.util;
 
 import android.os.Build;
 

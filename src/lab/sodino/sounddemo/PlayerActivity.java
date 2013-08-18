@@ -2,9 +2,9 @@ package lab.sodino.sounddemo;
 
 import java.io.File;
 
-import lab.sodino.sounddemo.sound.FormatNumber;
 import lab.sodino.sounddemo.sound.VoicePlayer;
 import lab.sodino.sounddemo.sound.VoicePlayer.VoicePlayerListener;
+import lab.sodino.sounddemo.util.FormatNumber;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Environment;
@@ -73,5 +73,21 @@ public class PlayerActivity extends Activity implements OnClickListener, Callbac
 			voicePlayer.release();
 			voicePlayer = null;
 		}
+	}
+
+	public void onStop(){
+		super.onStop();
+		if(voicePlayer != null){
+			voicePlayer.release();
+			voicePlayer = null;
+		}
+	}
+	
+	public void onDestory(){
+		super.onDestroy();
+		if(voicePlayer != null){
+			voicePlayer.release();
+			voicePlayer = null;
+		}		
 	}
 }

@@ -1,6 +1,6 @@
 package lab.sodino.sounddemo;
 
-import lab.sodino.sounddemo.sound.AudioUtil;
+import lab.sodino.sounddemo.util.AudioUtil;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
