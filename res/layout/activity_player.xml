@@ -15,7 +15,11 @@
         android:text="@string/hello_world" />
 	<Button android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
-	    android:id="@+id/btnPress2Talk"
-	    android:text="@string/pressed2talk"
+	    android:id="@+id/click2play"
+	    android:text="@string/click2play"
 	    android:layout_below="@id/txtDemo"/>
+	<TextView android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:id="@+id/txtProgress"
+	    android:layout_below="@id/click2play"/>
 </RelativeLayout>

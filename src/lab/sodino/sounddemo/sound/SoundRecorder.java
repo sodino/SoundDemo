@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import android.media.MediaRecorder;
+import android.util.Log;
 
 public class SoundRecorder {
 	public static final int STATE_INIT = 0;
@@ -73,9 +74,13 @@ public class SoundRecorder {
 					e.printStackTrace();
 				}
 			}
-			mediaRecorder.stop();
-			mediaRecorder.release();
-			mediaRecorder = null;
+			try{
+				mediaRecorder.stop();
+				mediaRecorder.release();
+				mediaRecorder = null;
+			}catch(RuntimeException re){
+				re.printStackTrace();
+			}
 			for(SoundRecordListener lis:arrListener){
 				lis.recordComplete(state);
 			}

@@ -13,9 +13,20 @@
         android:layout_height="wrap_content"
         android:id="@+id/txtDemo"
         android:text="@string/hello_world" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtHint"
+        android:text="@string/audioFocusHint"
+        android:layout_below="@id/txtDemo" />
 	<Button android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
-	    android:id="@+id/btnPress2Talk"
-	    android:text="@string/press2talk"
-	    android:layout_below="@id/txtDemo"/>
+	    android:id="@+id/btnAudioFocusRequest"
+	    android:text="@string/audioFocusRequest"
+	    android:layout_below="@id/txtHint"/>
+	<Button android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:id="@+id/btnAudioFocusAbandon"
+	    android:text="@string/audioFocusAbandon"
+	    android:layout_below="@id/btnAudioFocusRequest"/>
 </RelativeLayout>

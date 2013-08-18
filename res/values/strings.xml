@@ -7,6 +7,12 @@
 	<string name="SoundRecorder">SoundRecorder</string>
 	<string name="SoundPlayer">SoundPlayer</string>
 	<string name="ClipDrawable">ClipDrawable</string>
-    <string name="pressed2talk">按住说话</string>
-    <string name="released2finish">放开结束</string>
+    <string name="audioFocus">AudioFocus</string>
+    <string name="press2talk">Press 2 Talk</string>
+    <string name="released2finish">Release 2 Finish</string>
+    <string name="click2play">Click 2 Play</string>
+    <string name="click2pause">Click 2 Pause</string>
+    <string name="audioFocusRequest">Audio Focus Request</string>
+    <string name="audioFocusAbandon">Audio Focus Abandon</string>
+    <string name="audioFocusHint">请在其它程序开启一段音乐后，\n再进此界面，\n点击"Audio Focus Request"，则背景音乐将会停止；\n再点击"Audio Focus Abandon"，则音乐继续。</string>
 </resources>
