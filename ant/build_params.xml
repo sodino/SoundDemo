@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- @author sodinochen
+	项目构建的各种参数定义集合
+ -->
+<project name="params" default="" basedir="../">
+    <property name=""/>
+</project>

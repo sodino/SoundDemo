@@ -21,7 +21,7 @@
         style="?android:attr/progressBarStyleHorizontal" 
         android:layout_below="@id/txtDemo"
         android:layout_centerHorizontal="true"/>
-	<ImageView android:layout_width="match_parent"
+	<lab.sodino.sounddemo.view.TestImageView android:layout_width="match_parent"
 	    android:layout_height="match_parent"
 	    android:scaleType="fitCenter"
 	    android:id="@+id/imgClip"
@@ -29,5 +29,5 @@
 	    android:padding="10dp"
 	    android:layout_below="@id/seekbarTop"
 	    android:layout_centerHorizontal="true"
-    ></ImageView>
+    />
 </RelativeLayout>

@@ -26,6 +26,7 @@ public class PlayerActivity extends Activity implements OnClickListener, Callbac
 	Handler handler;
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
+		Log.d("ANDROID_LAB", "PlayerActivity onCreate time=" + System.currentTimeMillis());
 		setContentView(R.layout.activity_player);
 		handler = new Handler(this);
 		btnPlayer = (Button)findViewById(R.id.click2play);
@@ -36,6 +37,14 @@ public class PlayerActivity extends Activity implements OnClickListener, Callbac
 			btnPlayer.setEnabled(false);
 			txtProgress.setText(R.string.playerHint);
 		}
+
+		btnPlayer.getViewTreeObserver().addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
+			
+			@Override
+			public void onGlobalLayout() {
+				Log.d("ANDROID_LAB","PlayerActivity onGlobalLayout time=" + System.currentTimeMillis());
+			}
+		});
 	}
 	@Override
 	public void onClick(View v) {
@@ -92,6 +101,7 @@ public class PlayerActivity extends Activity implements OnClickListener, Callbac
 	
 	public void onStop(){
 		super.onStop();
+		Log.d("ANDROID_LAB", "PlayerActivity onStop time=" + System.currentTimeMillis());
 		if(voicePlayer != null){
 			voicePlayer.release();
 			voicePlayer = null;
