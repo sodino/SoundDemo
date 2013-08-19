@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -86,5 +87,15 @@ public class MainActivity extends ListActivity {
 
         Intent intent = (Intent) map.get("intent");
         startActivity(intent);
+    }
+    
+    public void onResume(){
+    	super.onResume();
+    	Log.d("ANDROID_LAB", "MainActivity onResume...");
+    }
+    
+    public void onWindowFocusChanged (boolean hasFocus){
+    	super.onWindowFocusChanged(hasFocus);
+    	Log.d("ANDROID_LAB", "MainActivity onWindowFocusChanged hasFocus="+hasFocus);
     }
 }

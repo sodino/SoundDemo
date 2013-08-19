@@ -11,14 +11,15 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Handler.Callback;
 import android.os.Message;
-import android.view.MotionEvent;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnTouchListener;
+import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.widget.Button;
 import android.widget.TextView;
 
 public class PlayerActivity extends Activity implements OnClickListener, Callback, VoicePlayerListener {
+	String path = Environment.getExternalStorageDirectory() +File.separator + "test.amr";
 	Button btnPlayer;
 	TextView txtProgress;
 	VoicePlayer voicePlayer;
@@ -30,11 +31,15 @@ public class PlayerActivity extends Activity implements OnClickListener, Callbac
 		btnPlayer = (Button)findViewById(R.id.click2play);
 		btnPlayer.setOnClickListener(this);
 		txtProgress = (TextView)findViewById(R.id.txtProgress);
+		
+		if(new File(path).exists() == false){
+			btnPlayer.setEnabled(false);
+			txtProgress.setText(R.string.playerHint);
+		}
 	}
 	@Override
 	public void onClick(View v) {
 		if(v == btnPlayer){
-			String path = Environment.getExternalStorageDirectory() +File.separator + "test.amr";
 			if(voicePlayer == null){
 				voicePlayer = new VoicePlayer(path, handler);
 				voicePlayer.addPlayerListener(this);
@@ -73,5 +78,15 @@ public class PlayerActivity extends Activity implements OnClickListener, Callbac
 			voicePlayer.release();
 			voicePlayer = null;
 		}
+	}
+	
+	public void onResume(){
+		super.onResume();
+		Log.d("ANDROID_LAB", "PlayerActivity onResume time=" + System.currentTimeMillis());
+	}
+	
+	public void onWindowFocusChanged(boolean hasFocus){
+		super.onWindowFocusChanged(hasFocus);
+		Log.d("ANDROID_LAB", "PlayerActivity onWindowFocusChanged hasFocus=" + hasFocus + " btn.width=" + btnPlayer.getWidth() +" time=" + System.currentTimeMillis());
 	}
 }

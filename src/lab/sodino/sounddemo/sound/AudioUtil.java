@@ -22,6 +22,7 @@ public class AudioUtil {
 		}
 		boolean bool = false;
 		AudioManager am = (AudioManager)context.getSystemService(Context.AUDIO_SERVICE);
+		
 		if(bMute){
 			int result = am.requestAudioFocus(null,AudioManager.STREAM_MUSIC,AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
 			bool = result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED;

@@ -15,4 +15,5 @@
     <string name="audioFocusRequest">Audio Focus Request</string>
     <string name="audioFocusAbandon">Audio Focus Abandon</string>
     <string name="audioFocusHint">请在其它程序开启一段音乐后，\n再进此界面，\n点击"Audio Focus Request"，则背景音乐将会停止；\n再点击"Audio Focus Abandon"，则音乐继续。</string>
+    <string name="playerHint">请先使用RecordActivity生成录音文件...</string>
 </resources>
